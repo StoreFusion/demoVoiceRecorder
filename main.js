@@ -35,8 +35,31 @@ function download() {
   window.URL.revokeObjectURL(url);
 }
 
+<<<<<<< HEAD
 // demo: to download after 9sec
 setTimeout((event) => {
   console.log("stopping");
   mediaRecorder.stop();
 }, 9000);
+=======
+recognition.onspeechend = function() {
+    console.log(recognition.results);
+  }
+
+
+// let recognisedSpeech = recognition.onresult
+recognition.onerror = function(event) {
+    diagnostic.textContent = 'Error occurred in recognition: ' + event.error;
+  }
+
+document.body.onclick = () => {
+    recognition.start();
+    console.log("speech recognition started");
+  }
+
+
+endBtn.onclick = () => {
+    recognition.abort();
+    console.log("Speech recognition aborted.");
+  };
+>>>>>>> 18332f3 ([html display changes])
